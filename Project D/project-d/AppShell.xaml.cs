@@ -1,4 +1,4 @@
-﻿namespace MauiApplication
+﻿namespace project_d
 {
     public partial class AppShell : Shell
     {
