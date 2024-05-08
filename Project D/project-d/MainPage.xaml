@@ -1,16 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+<<<<<<< HEAD
              x:Class="project_d.MainPage">
 
     <ScrollView>
         <VerticalStackLayout>
+=======
+             x:Class="project_d.MainPage"
+             NavigationPage.HasBackButton="False"
+             Title="Start">
+
+    <ScrollView>
+        <VerticalStackLayout Margin="30,10,30,10">
+>>>>>>> main
             <Label Text="PROJECT D"
                    FontSize="40"
                    HorizontalOptions="Center"
                    FontAttributes="Bold"
+<<<<<<< HEAD
                    TextColor="Black"
                    Margin="0,10"/>
+=======
+                   TextColor="Black"/>
+>>>>>>> main
             <Image Source="hr_logo.png"
                    HeightRequest="130"
                    Aspect="AspectFit"
@@ -41,15 +54,26 @@
                     FontAttributes="Bold"
                     HeightRequest="60"
                     WidthRequest="300"
+<<<<<<< HEAD
                     BackgroundColor="Black"/>
             <Button x:Name="RegisterBtn"
                     Margin="0,0,0,10"
+=======
+                    BackgroundColor="Black"
+                    Clicked="OnLoginBtnClicked"/>
+            <Button x:Name="RegisterBtn"
+>>>>>>> main
                     Text="Registreren"
                     FontSize="16"
                     FontAttributes="Bold"
                     HeightRequest="60"
                     WidthRequest="300"
+<<<<<<< HEAD
                     BackgroundColor="Black"/>
+=======
+                    BackgroundColor="Black"
+                    Clicked="OnRegisterBtnClicked"/>
+>>>>>>> main
         </VerticalStackLayout>
     </ScrollView>
 
