@@ -7,18 +7,18 @@ public partial class LoginPage : ContentPage
         InitializeComponent();
     }
 
-    public async void OnLoginBtnClicked()
+    public async void OnLoginBtnClicked(object sender, EventArgs e)
     {
         string email = EmailEntry.Text;
         string password = PasswordEntry.Text;
 
         if (email == "psycholoog@gmail.com" || password == "psycholoog123")
         {
-            await Navigation.PushAsync(new MainPage());
+            await Navigation.PushAsync(new PsycholoogPage());
         }
         else
         {
-            await DisplayAlert("Login Failed", "Invalid email or password", "OK");
+            await DisplayAlert("Login niet gelukt", "Email of wachtwoord niet correct", "OK");
         }
     }
 
