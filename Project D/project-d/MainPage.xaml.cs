@@ -9,12 +9,12 @@
 
         private async void OnLoginBtnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LoginPage());
+            await Navigation.PushAsync(new LoginPage(), true);
         }
 
         private async void OnRegisterBtnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new RegisterPage());
+            await Navigation.PushAsync(new RegisterPage(), true);
         }
     }
 

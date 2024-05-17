@@ -35,7 +35,8 @@
                 FontAttributes="Bold"
                 HeightRequest="60"
                 WidthRequest="300"
-                BackgroundColor="Black"/>
+                BackgroundColor="Black"
+                Clicked="OnLoginBtnClicked"/>
         <Button x:Name="ReturnBtn"
                 Text="Terug"
                 FontSize="16"

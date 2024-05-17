@@ -23,13 +23,7 @@
                    FontAttributes="Bold"
                    TextColor="Black"
                    HorizontalOptions="Center"/>
-            <Label Text="Heeft uw zorgverlener uw account aangemaakt? Log dan in met de inloggegevens die u van uw zorgverlener heeft ontvangen."
-                   Margin="50,0,50,20"
-                   FontSize="18"
-                   FontAttributes="Bold"
-                   HorizontalTextAlignment="Center"
-                   TextColor="Black"/>
-            <Label Text="Heeft u nog geen account? Maak dan een nieuw account aan en stuur de koppelcode door naar uw zorgverlener."
+            <Label Text="Heeft u nog geen account? Maak een nieuw account aan en stuur uw persoonlijke koppelcode door naar uw zorgverlener "
                    Margin="50,0,50,30"
                    FontSize="18"
                    FontAttributes="Bold"
@@ -45,6 +39,7 @@
                     BackgroundColor="Black"
                     Clicked="OnLoginBtnClicked"/>
             <Button x:Name="RegisterBtn"
+                    Margin="0,0,0,15"
                     Text="Registreren"
                     FontSize="16"
                     FontAttributes="Bold"

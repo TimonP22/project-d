@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="project_d.ClientOverviewPsycholoog"
+             Title="Cliëntenoverzicht">
+    <VerticalStackLayout Margin="30,10,30,10">
+        <Label Text="PROJECT D"
+               FontSize="40"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"
+               TextColor="Black"/>
+        <Image Source="hr_logo.png"
+               HeightRequest="130"
+               Aspect="AspectFit"
+               Margin="0,20,0,30"
+               HorizontalOptions="Center"/>
+        <ListView
+            x:Name="listClients"
+            SeparatorColor="Black">
+        </ListView>
+        <Button x:Name="SelectBtn"
+                Margin="0,20,0,15"
+                Text="Selecteren"
+                FontSize="16"
+                FontAttributes="Bold"
+                HeightRequest="60"
+                WidthRequest="300"
+                BackgroundColor="Black"/>
+        <Button x:Name="ReturnBtn"
+                Text="Terug"
+                FontSize="16"
+                FontAttributes="Bold"
+                HeightRequest="60"
+                WidthRequest="300"
+                BackgroundColor="Black"
+                Clicked="OnReturnBtnClicked"/>
+    </VerticalStackLayout>
+</ContentPage>
