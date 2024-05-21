@@ -23,13 +23,14 @@
                 Margin="0,5">
         </Picker>
         <Button x:Name="SelectBtn"
-            Margin="0,15,0,15"
-            Text="Selecteren"
-            FontSize="16"
-            FontAttributes="Bold"
-            HeightRequest="60"
-            WidthRequest="300"
-            BackgroundColor="Black"/>
+                Margin="0,15,0,15"
+                Text="Selecteren"
+                FontSize="16"
+                FontAttributes="Bold"
+                HeightRequest="60"
+                WidthRequest="300"
+                BackgroundColor="Black"
+                Clicked="OnSelectBtnClicked"/>
         <Button x:Name="ReturnBtn"
                 Margin="0,0,0,15"
                 Text="Terug"
