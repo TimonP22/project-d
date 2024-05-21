@@ -9,8 +9,27 @@ public partial class HWModuleStartPsycholoog : ContentPage
 		InitializeComponent();
 		clientPicker.ItemsSource = Helper.User!.Clients;
 	}
+    private void PopulatePicker()
+    {
+         
+        clientPicker.ItemsSource = Helper.User!.Clients;
+    }
 
-	private async void OnReturnBtnClicked(object sender, EventArgs e)
+    private void OnSubmitClicked(object sender, EventArgs e)
+    {
+        string description = DescriptionEntry.Text;
+        var selectedItem = clientpicker.SelectedItem as PickerItem;
+
+        if (string.IsNullOrEmpty(description)
+        {
+            DisplayAlert("Error", "Please enter both your name and email.", "OK");
+        }
+        else
+        {
+            DisplayAlert("you're homework has been ssuccesfully added");
+        }
+    }
+    private async void OnReturnBtnClicked(object sender, EventArgs e)
 	{
 		await Navigation.PushAsync(new StartschermPsycholoog());
 	}

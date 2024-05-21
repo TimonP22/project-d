@@ -22,6 +22,9 @@
                 Title="Cliënt"
                 Margin="0,5">
         </Picker>
+		<Picker x:Name="picker"
+        Title="Select a client">
+		</Picker>
         <Button x:Name="SelectBtn"
             Margin="0,15,0,15"
             Text="Selecteren"
@@ -30,6 +33,17 @@
             HeightRequest="60"
             WidthRequest="300"
             BackgroundColor="Black"/>
+		<Entry x:Name="DescriptionEntry"
+               Placeholder="Enter description of homework"
+               VerticalOptions="Center" />
+		 <Picker x:Name="clientpicker"
+                Title="Select an item"
+                VerticalOptions="Center" />
+
+		<Button Text="Submit"
+                VerticalOptions="Center"
+                Clicked="OnSubmitClicked" />
+		
         <Button x:Name="ReturnBtn"
                 Margin="0,0,0,15"
                 Text="Terug"
