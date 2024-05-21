@@ -4,13 +4,7 @@
              x:Class="project_d.HomeworkOverview"
              Title="Huiswerkmodule">
     <VerticalStackLayout>
-        <Label 
-            Text="Huiswerkmodule"
-            FontSize="20"
-               HorizontalOptions="Center"
-               FontAttributes="Bold"
-               TextColor="Black"/>
-        <Label Text="Client [client naam]"
+        <Label x:Name="ClientLbl"
                FontSize="24"
                HorizontalOptions="Center"
                FontAttributes="Bold"

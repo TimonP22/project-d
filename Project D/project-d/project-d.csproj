@@ -67,7 +67,6 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="HomeworkOverview.xaml">
-	  <MauiXaml Update="HWModuleStartPsycholoog.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="LoginPage.xaml">
