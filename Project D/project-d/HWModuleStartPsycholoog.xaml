@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="project_d.ClientOverviewPsycholoog"
-             Title="Cliëntenoverzicht">
+             x:Class="project_d.HWModuleStartPsycholoog"
+             Title="Huiswerkmodule">
     <VerticalStackLayout Margin="30,10,30,10">
         <Label Text="PROJECT D"
                FontSize="40"
@@ -14,29 +14,24 @@
                Aspect="AspectFit"
                Margin="0,20,0,30"
                HorizontalOptions="Center"/>
-        <ListView
-            x:Name="listClients"
-            SeparatorColor="Black">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Orientation="Vertical" Padding="10">
-                            <Label Text="{Binding .}" FontSize="12" FontAttributes="Bold"/>
-                            <Label Text="{Binding BirthdayString}" FontSize="12"/>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <Label Text="Kies een cliënt"
+               FontSize="18"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"/>
+        <Picker x:Name="clientPicker"
+                Title="Cliënt"
+                Margin="0,5">
+        </Picker>
         <Button x:Name="SelectBtn"
-                Margin="0,20,0,15"
-                Text="Selecteren"
-                FontSize="16"
-                FontAttributes="Bold"
-                HeightRequest="60"
-                WidthRequest="300"
-                BackgroundColor="Black"/>
+            Margin="0,15,0,15"
+            Text="Selecteren"
+            FontSize="16"
+            FontAttributes="Bold"
+            HeightRequest="60"
+            WidthRequest="300"
+            BackgroundColor="Black"/>
         <Button x:Name="ReturnBtn"
+                Margin="0,0,0,15"
                 Text="Terug"
                 FontSize="16"
                 FontAttributes="Bold"

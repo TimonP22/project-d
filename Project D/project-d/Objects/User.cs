@@ -26,5 +26,7 @@
             LastName = lastName;
             Birthday = birthday;
         }
+
+        public override string ToString() => $"{FullName}, {Age}";
     }
 }
