@@ -9,6 +9,7 @@ public partial class HomeworkOverview : ContentPage
 		InitializeComponent();
         User Client = client;
         ClientLbl.Text = Client.ToString();
+        homeworkList.ItemsSource = new List<string>() { "Huiswerk 1, 24/05/2024", "Huiswerk 2, 27/05/2025" };
 	}
 
     private async void OnViewHomeworkBtnClicked(object sender, EventArgs e)
