@@ -5,6 +5,7 @@
         public string FirstName { get; }
         public string LastName { get; }
         public string FullName { get => $"{FirstName} {LastName}"; }
+        public string BirthdayString { get => Birthday.ToShortDateString(); }
         private DateTime Birthday { get; }
         public int Age
         {
