@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="project_d.HomeworkOverview"
+             Title="Huiswerkmodule">
+    <VerticalStackLayout>
+        <Label 
+            Text="Huiswerkmodule"
+            FontSize="20"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"
+               TextColor="Black"/>
+        <Label Text="Client [client naam]"
+               FontSize="24"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"
+               Margin="0,20,0,10"/>
+        <Label Text="Opgesteld huiswerk"
+               FontSize="18"
+               HorizontalOptions="Center"
+               Margin="0,10,0,10"/>
+        <Button x:Name="ViewHomeworkBtn"
+                Text="Huiswerk inzien"
+                FontSize="16"
+                FontAttributes="Bold"
+                HeightRequest="60"
+                WidthRequest="300"
+                BackgroundColor="Black"
+                TextColor="White"
+                Margin="0,10,0,10"
+                HorizontalOptions="Center"
+                Clicked="OnViewHomeworkBtnClicked"/>
+        <Button x:Name="CreateHomeworkBtn"
+                Text="Huiswerk opstellen"
+                FontSize="16"
+                FontAttributes="Bold"
+                HeightRequest="60"
+                WidthRequest="300"
+                BackgroundColor="Black"
+                TextColor="White"
+                Margin="0,10,0,10"
+                HorizontalOptions="Center"
+                Clicked="OnCreateHomeworkBtnClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

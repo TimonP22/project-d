@@ -26,7 +26,8 @@
             FontAttributes="Bold"
             HeightRequest="60"
             WidthRequest="300"
-            BackgroundColor="Black"/>
+            BackgroundColor="Black"
+            Clicked="OnHWModBtnClicked"/>
         <Button x:Name="ClientOverviewBtn"
                 Margin="0,0,0,15"
                 Text="Cliënten"
