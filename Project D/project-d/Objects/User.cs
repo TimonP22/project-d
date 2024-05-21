@@ -18,6 +18,7 @@
                 return age;
             }
         }
+        public List<User>? Clients { get; set; }
 
         public User(string firstName, string lastName, DateTime birthday)
         {
@@ -25,5 +26,7 @@
             LastName = lastName;
             Birthday = birthday;
         }
+
+        public override string ToString() => $"{FullName}, {Age}";
     }
 }

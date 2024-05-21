@@ -2,12 +2,12 @@ using project_d.Objects;
 
 namespace project_d;
 
-public partial class ClientOverviewPsycholoog : ContentPage
+public partial class HWModuleStartPsycholoog : ContentPage
 {
-	public ClientOverviewPsycholoog()
+	public HWModuleStartPsycholoog()
 	{
 		InitializeComponent();
-		listClients.ItemsSource = Helper.User!.Clients;
+		clientPicker.ItemsSource = Helper.User!.Clients;
 	}
 
 	private async void OnReturnBtnClicked(object sender, EventArgs e)

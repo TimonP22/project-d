@@ -22,6 +22,6 @@ public partial class StartschermPsycholoog : ContentPage
 
 	private async void OnHWModBtnClicked(object sender, EventArgs e)
 	{
-        await Navigation.PushAsync(new HomeworkOverview(), true);
-    }
+		await Navigation.PushAsync(new HWModuleStartPsycholoog(), true);
+	}
 }
