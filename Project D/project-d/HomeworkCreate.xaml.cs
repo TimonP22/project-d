@@ -12,7 +12,7 @@ public partial class HomeworkCreate : ContentPage
 	private void OnSubmitClicked(object sender, EventArgs e)
 	{
 		string description = Entrydescription.Text;
-
+		string hoi = "hoi"
         Navigation.PushAsync(new StartschermPsycholoog());
 
     }
