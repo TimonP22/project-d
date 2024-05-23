@@ -81,4 +81,27 @@ public class DatabaseHelper
             await page.DisplayAlert("Error", ex.Message, "OK");
         }
     }
+
+    public async Task FillDataBase(Page page)
+    {
+        List<User> users = new()
+        {
+            new Psycholoog("Mark", "Koopmans", new DateTime(1987, 1, 1), "mkoopmans@pd.nl", "mkpd"),
+            new Client("Kees", "Janssen", new DateTime(1995, 1, 1), "kjanssen@gmail.com", "kjpd"),
+            new Client("Gerard", "Spijkerman", new DateTime(1999, 1, 1), "gspijkerman@gmail.com", "gspd"),
+            new Client("Armando", "Bieleveld", new DateTime(1995, 1, 1), "abieleveld@gmail.com", "abpd"),
+            new Client("Catlijn", "Verheul", new DateTime(2005, 1, 1), "cverheul@gmail.com", "cvpd"),
+        };
+
+        try
+        {
+            await Init();
+            await conn.InsertAllAsync(users);
+            await page.DisplayAlert("Notification", "Database has been filled for testing", "OK");
+        }
+        catch (Exception ex)
+        {
+            await page.DisplayAlert("Error", ex.Message, "OK");
+        }
+    }
 }
