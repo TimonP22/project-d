@@ -17,12 +17,13 @@ public partial class RegisterPage : ContentPage
 
     private async void OnRegisterBtnClicked(object sender, EventArgs e)
     {
-        if (NameEntry == null || EmailEntry == null || PasswordEntry == null) return;
-        
-        var firstName = NameEntry.Text.Split()[0];
-        var lastName = NameEntry.Text.Split()[1];
+        if (FirstNameEntry.Text == null || LastNameEntry.Text == null || EmailEntry.Text == null || PasswordEntry.Text == null)
+        {
+            await DisplayAlert("Error", "Niet alle gegevens zijn correct ingevuld.", "OK");
+            return;
+        }
 
-        Psycholoog newPsychologist = new(firstName, lastName, datePicker.Date, EmailEntry.Text, PasswordEntry.Text);
+        Psycholoog newPsychologist = new(FirstNameEntry.Text, LastNameEntry.Text, datePicker.Date, EmailEntry.Text, PasswordEntry.Text);
         await App.DatabaserHelper.AddNewUser(newPsychologist, this);
     }
 }
