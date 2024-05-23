@@ -51,4 +51,26 @@ public class DatabaseHelper
             await page.DisplayAlert("Error", ex.Message, "OK");
         }
     }
+
+    public async Task LogIn(Page page, string email, string password)
+    {
+        try
+        {
+            await Init();
+
+            var user = await conn.Table<Psycholoog>().FirstOrDefaultAsync(p => p.Email == email && p.Password == password);
+            if (user == null)
+            {
+                await page.DisplayAlert("Inloggen", "Gebruiker niet gevonden.", "OK");
+                return;
+            }
+
+            Helper.User = user;
+            await page.Navigation.PushAsync(new StartschermPsycholoog(), true);
+        }
+        catch (Exception ex)
+        {
+            await page.DisplayAlert("Error", ex.Message, "OK");
+        }
+    }
 }

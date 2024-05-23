@@ -27,6 +27,13 @@ public partial class LoginPage : ContentPage
                 new("Bryan", "Danielson", new DateTime(1981,5,22))
             };
             await Navigation.PushAsync(new StartschermPsycholoog(), true);
+            return;
         }
+        if (EmailEntry.Text == null || PasswordEntry.Text == null)
+        {
+            await DisplayAlert("Inloggen", "Niet alle gegevens zijn volledig ingevuld.", "OK");
+            return;
+        }
+        await App.DatabaserHelper.LogIn(this, EmailEntry.Text, PasswordEntry.Text);
     }
 }
