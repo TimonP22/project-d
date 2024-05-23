@@ -23,7 +23,7 @@ public partial class RegisterPage : ContentPage
             return;
         }
 
-        Psycholoog newPsychologist = new(FirstNameEntry.Text, LastNameEntry.Text, datePicker.Date, EmailEntry.Text, PasswordEntry.Text);
+        Psycholoog newPsychologist = new(FirstNameEntry.Text, LastNameEntry.Text, datePicker.Date, EmailEntry.Text.ToLower(), PasswordEntry.Text);
         await App.DatabaserHelper.AddNewUser(newPsychologist, this);
     }
 }

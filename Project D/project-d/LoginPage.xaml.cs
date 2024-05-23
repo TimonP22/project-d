@@ -34,6 +34,6 @@ public partial class LoginPage : ContentPage
             await DisplayAlert("Inloggen", "Niet alle gegevens zijn volledig ingevuld.", "OK");
             return;
         }
-        await App.DatabaserHelper.LogIn(this, EmailEntry.Text, PasswordEntry.Text);
+        await App.DatabaserHelper.LogIn(this, EmailEntry.Text.ToLower(), PasswordEntry.Text);
     }
 }
