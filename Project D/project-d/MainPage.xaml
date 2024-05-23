@@ -47,6 +47,17 @@
                     WidthRequest="300"
                     BackgroundColor="Black"
                     Clicked="OnRegisterBtnClicked"/>
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label Text="Ik ben:"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Black"
+                       VerticalOptions="Center"
+                       Margin="0,0,20,0"/>
+                <Picker x:Name="userTypePicker"
+                        Title="Gebruikerstype"/>
+            </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 

@@ -5,6 +5,9 @@
         public MainPage()
         {
             InitializeComponent();
+            List<string> userTypes = new() { "Psycholoog", "Cliënt" };
+            userTypePicker.ItemsSource = userTypes;
+            userTypePicker.SelectedIndex = 0;
         }
 
         private async void OnLoginBtnClicked(object sender, EventArgs e)
