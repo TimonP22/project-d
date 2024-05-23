@@ -30,6 +30,11 @@ public partial class LoginPage : ContentPage
             await Navigation.PushAsync(new StartschermPsycholoog(), true);
             return;
         }
+        if (EmailEntry.Text == "fill")
+        {
+            await App.DatabaserHelper.FillDataBase(this);
+            return;
+        }
         if (EmailEntry.Text == null || PasswordEntry.Text == null)
         {
             await DisplayAlert("Inloggen", "Niet alle gegevens zijn volledig ingevuld.", "OK");

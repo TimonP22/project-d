@@ -19,8 +19,6 @@ namespace project_d
 
         private async void OnRegisterBtnClicked(object sender, EventArgs e)
         {
-            // Uncomment this line to fill the database with testing values, including 1 psychologist and 4 clients
-            // await App.DatabaserHelper.FillDataBase(this);
             await Navigation.PushAsync(new RegisterPage(), true);
         }
 
