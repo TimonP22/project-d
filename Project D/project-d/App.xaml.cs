@@ -2,10 +2,13 @@
 {
     public partial class App : Application
     {
-        public App()
+        public static DatabaseHelper DatabaserHelper { get; private set; }
+
+        public App(DatabaseHelper databaseHelper)
         {
             InitializeComponent();
             MainPage = new NavigationPage(new MainPage());
+            DatabaserHelper = databaseHelper;
         }
     }
 }

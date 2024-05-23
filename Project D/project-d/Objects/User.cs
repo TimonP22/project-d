@@ -1,12 +1,24 @@
-﻿namespace project_d.Objects
+﻿using SQLite;
+
+namespace project_d.Objects
 {
+    [Table("Users")]
     public class User
     {
-        public string FirstName { get; }
-        public string LastName { get; }
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        private DateTime Birthday { get; set; }
+
+        [Ignore]
         public string FullName { get => $"{FirstName} {LastName}"; }
+        [Ignore]
         public string BirthdayString { get => Birthday.ToShortDateString(); }
-        private DateTime Birthday { get; }
+        [Ignore]
         public int Age
         {
             get
@@ -18,13 +30,25 @@
                 return age;
             }
         }
+        [Ignore]
         public List<User>? Clients { get; set; }
 
-        public User(string firstName, string lastName, DateTime birthday)
+        public User(string firstName, string lastName, DateTime birthday, string email="", string password="")
         {
             FirstName = firstName;
             LastName = lastName;
             Birthday = birthday;
+            Email = email;
+            Password = password;
+        }
+
+        public User()
+        {
+            FirstName = string.Empty;
+            LastName = string.Empty;
+            Email = string.Empty;
+            Password = string.Empty;
+            Birthday = DateTime.MinValue;
         }
 
         public override string ToString() => $"{FullName}, {Age}";

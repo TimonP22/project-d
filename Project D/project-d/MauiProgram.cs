@@ -19,6 +19,10 @@ namespace project_d
     		builder.Logging.AddDebug();
 #endif
 
+            string dbPath = FileAccessHelper.GetLocalFilePath("maui_sqlite.db3");
+            builder.Services.AddSingleton(s => ActivatorUtilities.CreateInstance<DatabaseHelper>(s, dbPath));
+
+
             return builder.Build();
         }
     }
