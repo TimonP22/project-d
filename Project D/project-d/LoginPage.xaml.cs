@@ -7,6 +7,7 @@ public partial class LoginPage : ContentPage
 	public LoginPage()
 	{
 		InitializeComponent();
+        Title += Helper.IsPsychologist ? " Psycholoog" : " Cliënt";
 	}
 
     private async void OnReturnBtnClicked(object sender, EventArgs e)

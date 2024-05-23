@@ -8,7 +8,8 @@ public partial class RegisterPage : ContentPage
 	{
 		InitializeComponent();
         datePicker.MaximumDate = new DateTime(DateTime.Today.Year - 13, 1, 1);
-	}
+        Title += Helper.IsPsychologist ? " Psycholoog" : " Cliënt";
+    }
 
     private async void OnReturnBtnClicked(object sender, EventArgs e)
     {
@@ -23,7 +24,11 @@ public partial class RegisterPage : ContentPage
             return;
         }
 
-        Psycholoog newPsychologist = new(FirstNameEntry.Text, LastNameEntry.Text, datePicker.Date, EmailEntry.Text.ToLower(), PasswordEntry.Text);
-        await App.DatabaserHelper.AddNewUser(newPsychologist, this);
+        User user;
+        if (Helper.IsPsychologist)
+            user = new Psycholoog(FirstNameEntry.Text, LastNameEntry.Text, datePicker.Date, EmailEntry.Text.ToLower(), PasswordEntry.Text);
+        else
+            user = new Client(FirstNameEntry.Text, LastNameEntry.Text, datePicker.Date, EmailEntry.Text.ToLower(), PasswordEntry.Text);
+        await App.DatabaserHelper.AddNewUser(user, this);
     }
 }

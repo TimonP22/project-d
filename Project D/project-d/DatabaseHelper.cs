@@ -57,8 +57,12 @@ public class DatabaseHelper
         try
         {
             await Init();
+            User user;
+            if (Helper.IsPsychologist)
+                user = await conn.Table<Psycholoog>().FirstOrDefaultAsync(p => p.Email == email && p.Password == password);
+            else
+                user = await conn.Table<Client>().FirstOrDefaultAsync(p => p.Email == email && p.Password == password);
 
-            var user = await conn.Table<Psycholoog>().FirstOrDefaultAsync(p => p.Email == email && p.Password == password);
             if (user == null)
             {
                 await page.DisplayAlert("Inloggen", "Gebruiker niet gevonden.", "OK");
@@ -66,7 +70,11 @@ public class DatabaseHelper
             }
 
             Helper.User = user;
-            await page.Navigation.PushAsync(new StartschermPsycholoog(), true);
+
+            if (Helper.IsPsychologist)
+                await page.Navigation.PushAsync(new StartschermPsycholoog(), true);
+            else
+                await page.DisplayAlert("Inloggen", "Cliëntpagina's nog niet geïmplementeerd.", "OK");
         }
         catch (Exception ex)
         {

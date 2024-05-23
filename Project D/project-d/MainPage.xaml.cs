@@ -1,4 +1,6 @@
-﻿namespace project_d
+﻿using project_d.Objects;
+
+namespace project_d
 {
     public partial class MainPage : ContentPage
     {
@@ -18,6 +20,11 @@
         private async void OnRegisterBtnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new RegisterPage(), true);
+        }
+
+        private void OnUserTypeChanged(object sender, EventArgs e)
+        {
+            Helper.IsPsychologist = userTypePicker.SelectedIndex == 0;
         }
     }
 

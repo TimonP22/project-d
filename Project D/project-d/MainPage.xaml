@@ -56,7 +56,8 @@
                        VerticalOptions="Center"
                        Margin="0,0,20,0"/>
                 <Picker x:Name="userTypePicker"
-                        Title="Gebruikerstype"/>
+                        Title="Gebruikerstype"
+                        SelectedIndexChanged="OnUserTypeChanged"/>
             </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
