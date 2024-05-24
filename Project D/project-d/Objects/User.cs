@@ -12,7 +12,7 @@ namespace project_d.Objects
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        private DateTime Birthday { get; set; }
+        public DateTime Birthday { get; set; }
 
         [Ignore]
         public string FullName { get => $"{FirstName} {LastName}"; }
