@@ -17,9 +17,11 @@ public class DatabaseHelper
         {
             await conn.DropTableAsync<Psycholoog>();
             await conn.DropTableAsync<Client>();
+            await conn.DropTableAsync<Huiswerk>();
         }
         await conn.CreateTableAsync<Psycholoog>();
         await conn.CreateTableAsync<Client>();
+        await conn.CreateTableAsync<Huiswerk>();
     }
 
     public DatabaseHelper(string dbPath)
