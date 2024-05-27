@@ -7,7 +7,7 @@ public partial class HWModuleStartPsycholoog : ContentPage
 	public HWModuleStartPsycholoog()
 	{
 		InitializeComponent();
-		clientPicker.ItemsSource = Helper.User!.Clients;
+		clientPicker.ItemsSource = ((Psycholoog)Helper.User!).Clients;
 	}
 
 	private async void OnReturnBtnClicked(object sender, EventArgs e)

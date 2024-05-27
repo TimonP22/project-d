@@ -19,13 +19,13 @@ public partial class LoginPage : ContentPage
     {
         if (EmailEntry.Text == "psy")
         {
-            Helper.User = new("John", "Doe", new DateTime(2000,1,1));
-            Helper.User.Clients = new()
+            Helper.User = new Psycholoog("John", "Doe", new DateTime(2000,1,1), "jdoe@pd.nl", "jdoe");
+            ((Psycholoog)Helper.User).Clients = new()
             {
-                new("Tim", "Akkerman", new DateTime(1980,7,23)),
-                new("Jerdy", "Schouten", new DateTime(1997,1,12)),
-                new("Martin", "Larsson", new DateTime(1996,9,20)),
-                new("Bryan", "Danielson", new DateTime(1981,5,22))
+                new("Tim", "Akkerman", new DateTime(1980,7,23), "takkerman@gmail.com", "tak", Helper.User.Id),
+                new("Jerdy", "Schouten", new DateTime(1997,1,12), "jschouten@gmail.com", "jsc", Helper.User.Id),
+                new("Martin", "Larsson", new DateTime(1996,9,20), "mlarsson@gmail.com", "mla", Helper.User.Id),
+                new("Bryan", "Danielson", new DateTime(1981,5,22), "bdanielson@gmail.com", "bda", Helper.User.Id)
             };
             await Navigation.PushAsync(new StartschermPsycholoog(), true);
             return;

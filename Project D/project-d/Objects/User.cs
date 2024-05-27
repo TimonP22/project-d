@@ -30,8 +30,6 @@ namespace project_d.Objects
                 return age;
             }
         }
-        [Ignore]
-        public List<User>? Clients { get; set; }
 
         public User(string firstName, string lastName, DateTime birthday, string email="", string password="")
         {

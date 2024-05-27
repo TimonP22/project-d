@@ -7,7 +7,7 @@ public partial class ClientOverviewPsycholoog : ContentPage
 	public ClientOverviewPsycholoog()
 	{
 		InitializeComponent();
-		listClients.ItemsSource = Helper.User!.Clients;
+		listClients.ItemsSource = ((Psycholoog)Helper.User!).Clients;
 	}
 
 	private async void OnReturnBtnClicked(object sender, EventArgs e)
