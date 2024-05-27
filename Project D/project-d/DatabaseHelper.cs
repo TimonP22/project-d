@@ -138,4 +138,16 @@ public class DatabaseHelper
         {
         }
     }
+
+    public async Task PublishHomework(Huiswerk huiswerk)
+    {
+        try
+        {
+            await Init();
+            await conn.InsertAsync(huiswerk);
+        }
+        catch
+        {
+        }
+    }
 }

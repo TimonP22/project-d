@@ -4,16 +4,18 @@ namespace project_d;
 
 public partial class HomeworkCreate : ContentPage
 {
+	User Client;
 	public HomeworkCreate(User client)
 	{
 		InitializeComponent();
-        User Client = client;
+        Client = client;
     }
-	private void OnSubmitClicked(object sender, EventArgs e)
+	private async void OnSubmitClicked(object sender, EventArgs e)
 	{
-		string description = Entrydescription.Text;
+		Huiswerk huiswerk = new(Entrydescription.Text, Helper.User.Id, Client.Id);
 
-        Navigation.PushAsync(new StartschermPsycholoog());
-
+		await App.DatabaserHelper.PublishHomework(huiswerk);
+		await DisplayAlert("Notification", "Huiswerkopdrach succesvol aangemaakt.", "OK");
+        await Navigation.PushAsync(new StartschermPsycholoog());
     }
 }
