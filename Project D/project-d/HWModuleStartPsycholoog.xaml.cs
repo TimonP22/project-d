@@ -18,7 +18,7 @@ public partial class HWModuleStartPsycholoog : ContentPage
     private async void OnSelectBtnClicked(object sender, EventArgs e)
     {
 		if (clientPicker.SelectedItem == null) return;
-		var selectedClient = clientPicker.SelectedItem as User;
+		var selectedClient = clientPicker.SelectedItem as Client;
 		await Navigation.PushAsync(new HomeworkOverview(selectedClient!), true);
     }
 }

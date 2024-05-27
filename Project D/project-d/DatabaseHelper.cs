@@ -126,4 +126,16 @@ public class DatabaseHelper
         {
         }
     }
+
+    public async Task GetHomework(Client client)
+    {
+        try
+        {
+            await Init();
+            client.Huiswerk = await conn.Table<Huiswerk>().Where(h => h.ClientId == client.Id).ToListAsync();
+        }
+        catch
+        {
+        }
+    }
 }

@@ -4,14 +4,13 @@ namespace project_d;
 
 public partial class HomeworkOverview : ContentPage
 {
-    public User clent;
-	public HomeworkOverview(User client)
+    public Client Client;
+	public HomeworkOverview(Client client)
 	{
 		InitializeComponent();
-        User Client = client;
-        clent = Client;
+        Client = client;
         ClientLbl.Text = Client.ToString();
-        homeworkList.ItemsSource = new List<string>() { "Huiswerk 1, 24/05/2024", "Huiswerk 2, 27/05/2025" };
+        homeworkList.ItemsSource = Client.Huiswerk;
 	}
 
     private async void OnViewHomeworkBtnClicked(object sender, EventArgs e)
@@ -21,6 +20,6 @@ public partial class HomeworkOverview : ContentPage
 
     private async void OnCreateHomeworkBtnClicked(object sender, EventArgs e)
     {
-       await Navigation.PushAsync(new HomeworkCreate(clent));
+       await Navigation.PushAsync(new HomeworkCreate(Client));
     }
 } 

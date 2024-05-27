@@ -2,7 +2,7 @@
 
 namespace project_d.Objects;
 
-[Table("Huiswerk")]
+[Table("Homework")]
 public class Huiswerk
 {
     [PrimaryKey, AutoIncrement]
