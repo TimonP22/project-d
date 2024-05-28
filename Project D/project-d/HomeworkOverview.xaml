@@ -26,7 +26,18 @@
                Margin="0,0,0,10"/>
         <Border Stroke="Black" StrokeThickness="1.5">
             <ListView x:Name="homeworkList"
-                      SeparatorColor="Black"/>
+                      SeparatorColor="Black">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <VerticalStackLayout Padding="10">
+                                <Label Text="{Binding Title}" FontSize="12" FontAttributes="Bold"/>
+                                <Label Text="{Binding DueDateString}" FontSize="12"/>
+                            </VerticalStackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Border>
         <Button x:Name="ViewHomeworkBtn"
             Text="Huiswerk inzien"

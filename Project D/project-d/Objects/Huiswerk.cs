@@ -11,6 +11,7 @@ public class Huiswerk
     public int PsychologistId { get; set; }
     public int ClientId { get; set; }
     public DateTime DueDate { get; set; }
+    public string DueDateString { get => $"Inleveren voor: {DueDate.ToShortDateString()}"; }
 
     public Huiswerk(string title, int psychologistId, int clientId)
     {
