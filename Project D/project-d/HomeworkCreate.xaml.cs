@@ -8,14 +8,20 @@ public partial class HomeworkCreate : ContentPage
 	public HomeworkCreate(User client)
 	{
 		InitializeComponent();
+		SetDate();
         Client = client;
     }
 	private async void OnSubmitClicked(object sender, EventArgs e)
 	{
-		Huiswerk huiswerk = new(Entrydescription.Text, Helper.User.Id, Client.Id);
+		Huiswerk huiswerk = new(titleEntry.Text, descriptionEditor.Text, Helper.User.Id, Client.Id, datePicker.Date);
 
 		await App.DatabaserHelper.PublishHomework(huiswerk);
-		await DisplayAlert("Notification", "Huiswerkopdrach succesvol aangemaakt.", "OK");
+		await DisplayAlert("Notification", "Huiswerkopdracht succesvol aangemaakt.", "OK");
         await Navigation.PushAsync(new StartschermPsycholoog());
     }
+
+	private void SetDate()
+	{
+		datePicker.MinimumDate = DateTime.Today;
+	}
 }
