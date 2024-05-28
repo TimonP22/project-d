@@ -35,6 +35,11 @@ public partial class LoginPage : ContentPage
             await App.DatabaserHelper.FillDataBase(this);
             return;
         }
+        if (EmailEntry.Text == "clear")
+        {
+            await App.DatabaserHelper.ClearDatabase(this);
+            return;
+        }
         if (EmailEntry.Text == null || PasswordEntry.Text == null)
         {
             await DisplayAlert("Inloggen", "Niet alle gegevens zijn volledig ingevuld.", "OK");

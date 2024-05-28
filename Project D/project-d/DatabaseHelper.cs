@@ -150,4 +150,11 @@ public class DatabaseHelper
         {
         }
     }
+
+    public async Task ClearDatabase(Page page)
+    {
+        await Init(true);
+
+        await page.DisplayAlert("Notification", "Database has been reset", "OK");
+    }
 }
