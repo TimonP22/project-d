@@ -25,19 +25,27 @@
                HorizontalOptions="Center"
                Margin="0,0,0,10"/>
         <Border Stroke="Black" StrokeThickness="1.5">
-            <ListView x:Name="homeworkList"
-                      SeparatorColor="Black">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <VerticalStackLayout Padding="10">
-                                <Label Text="{Binding Title}" FontSize="12" FontAttributes="Bold"/>
-                                <Label Text="{Binding DueDateString}" FontSize="12"/>
-                            </VerticalStackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <VerticalStackLayout>
+                <Label x:Name="NoHomework"
+                       Text="Client heeft geen opgesteld huiswerk"
+                       FontSize="16"
+                       HorizontalOptions="Center"
+                       TextColor="Gray"
+                       IsVisible="False"/>
+                <ListView x:Name="homeworkList"
+                          SeparatorColor="Black">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <VerticalStackLayout Padding="10">
+                                    <Label Text="{Binding Title}" FontSize="12" FontAttributes="Bold"/>
+                                    <Label Text="{Binding DueDateString}" FontSize="12"/>
+                                </VerticalStackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
         </Border>
         <Button x:Name="ViewHomeworkBtn"
             Text="Huiswerk inzien"
