@@ -84,7 +84,9 @@ public class DatabaseHelper
                 await page.Navigation.PushAsync(new StartschermPsycholoog(), true);
             }
             else
-                await page.DisplayAlert("Inloggen", "Cliëntpagina's nog niet geïmplementeerd.", "OK");
+            {
+                await page.Navigation.PushAsync(new HomeworkSubmittingClient(new Huiswerk("Kleine huiswerkopdracht", "Korte beschrijving\nOm te testen", 1, 1, DateTime.Today)));
+            }
         }
         catch (Exception ex)
         {

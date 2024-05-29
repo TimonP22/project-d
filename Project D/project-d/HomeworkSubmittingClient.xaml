@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="project_d.HomeworkSubmittingClient"
+             Title="Huiswerk invullen">
+    <ScrollView>
+        <VerticalStackLayout Margin="30,10,30,10" Padding="0,5,0,0">
+            <Label Text="PROJECT D"
+           FontSize="40"
+           HorizontalOptions="Center"
+           FontAttributes="Bold"
+           TextColor="Black"/>
+            <Image Source="hr_logo.png"
+            HeightRequest="130"
+            Aspect="AspectFit"
+            Margin="0,20,0,30"
+            HorizontalOptions="Center"/>
+            <Label Text="Titel:" FontSize="18" FontAttributes="Bold"/>
+            <Label x:Name="titleLabel" FontSize="18"/>
+            <Label Text="Opdrachtomschrijving:" FontSize="18" FontAttributes="Bold" Margin="0,5,0,0"/>
+            <Label x:Name="descriptionLabel" FontSize="18"/>
+            <Label Text="Antwoord" FontSize="18" FontAttributes="Bold" Margin="0,20,0,0"/>
+            <Editor x:Name="answerEditor" 
+           Placeholder="Antwoord"
+           HeightRequest="300"/>
+            <Button Text="Opslaan" 
+            VerticalOptions="Center"
+            Margin="0,20,0,15"
+            HeightRequest="60"
+            WidthRequest="300"
+            BackgroundColor="Black"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
