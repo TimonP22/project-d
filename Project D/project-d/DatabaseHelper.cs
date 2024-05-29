@@ -10,7 +10,7 @@ public class DatabaseHelper
 
     private async Task Init(bool clear=false)
     {
-        if (conn != null) return;
+        if (conn != null && clear == false) return;
 
         conn = new(_dbPath);
         if (clear)
