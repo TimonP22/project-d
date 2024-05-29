@@ -3,30 +3,38 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="project_d.HomeworkCreate"
              Title="Huiswerkmodule">
-    <VerticalStackLayout Margin="30,10,30,10">
-        <Label Text="PROJECT D"
-       FontSize="40"
-       HorizontalOptions="Center"
-       FontAttributes="Bold"
-       TextColor="Black"/>
+    <ScrollView>
+         <VerticalStackLayout Margin="30,10,30,10" Padding="0,5,0,0">
+            <Label Text="PROJECT D"
+                   FontSize="40"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   TextColor="Black"/>
             <Image Source="hr_logo.png"
-       HeightRequest="130"
-       Aspect="AspectFit"
-       Margin="0,20,0,30"
-       HorizontalOptions="Center"/>
-
-            <Label Text="description" 
-               FontSize="Medium"
-               VerticalOptions="Center" />
-        <Entry x:Name="Entrydescription" 
-               Placeholder="Please fill in the description of the assignment"
-               VerticalOptions="Center" />
-        <Button Text="Submit" 
-                VerticalOptions="Center"
-                Margin="0,20,0,15"
-                HeightRequest="60"
-                WidthRequest="300"
-                BackgroundColor="Black"
-                Clicked="OnSubmitClicked" />
-    </VerticalStackLayout>
+                    HeightRequest="130"
+                    Aspect="AspectFit"
+                    Margin="0,20,0,30"
+                    HorizontalOptions="Center"/>
+            <Label Text="Titel" FontSize="18" FontAttributes="Bold"/>
+            <Entry x:Name="titleEntry" Placeholder="Titel"/>
+            <Label Text="Opdrachtomschrijving" FontSize="18" FontAttributes="Bold"/>
+            <Editor x:Name="descriptionEditor" 
+                   Placeholder="omschrijving"
+                   HeightRequest="100"/>
+            <Label Text="Vraag" FontSize="18" FontAttributes="Bold"/>
+            <Editor x:Name="questionEditor" 
+                   Placeholder="Vraag"
+                   HeightRequest="100"/>
+            <Label Text="Inleveren voor:" FontSize="18" FontAttributes="Bold"/>
+            <DatePicker x:Name="datePicker"/>
+            <Button Text="Submit" 
+                    VerticalOptions="Center"
+                    Margin="0,20,0,15"
+                    HeightRequest="60"
+                    WidthRequest="300"
+                    BackgroundColor="Black"
+                    Clicked="OnSubmitClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+   
 </ContentPage>

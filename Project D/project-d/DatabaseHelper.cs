@@ -10,7 +10,7 @@ public class DatabaseHelper
 
     private async Task Init(bool clear=false)
     {
-        if (conn != null) return;
+        if (conn != null && clear == false) return;
 
         conn = new(_dbPath);
         if (clear)
@@ -149,5 +149,12 @@ public class DatabaseHelper
         catch
         {
         }
+    }
+
+    public async Task ClearDatabase(Page page)
+    {
+        await Init(true);
+
+        await page.DisplayAlert("Notification", "Database has been reset", "OK");
     }
 }
