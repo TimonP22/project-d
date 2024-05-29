@@ -15,7 +15,7 @@ public partial class HomeworkCreate : ContentPage
 		Huiswerk huiswerk = new(Entrydescription.Text, Helper.User.Id, Client.Id);
 
 		await App.DatabaserHelper.PublishHomework(huiswerk);
-		await DisplayAlert("Notification", "Huiswerkopdrach succesvol aangemaakt.", "OK");
+		await DisplayAlert("Notification", "Huiswerkopdracht succesvol aangemaakt.", "OK");
         await Navigation.PushAsync(new StartschermPsycholoog());
     }
 }

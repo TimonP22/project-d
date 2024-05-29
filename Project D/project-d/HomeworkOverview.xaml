@@ -25,8 +25,16 @@
                HorizontalOptions="Center"
                Margin="0,0,0,10"/>
         <Border Stroke="Black" StrokeThickness="1.5">
-            <ListView x:Name="homeworkList"
-                      SeparatorColor="Black"/>
+            <VerticalStackLayout>
+                <Label x:Name="NoHomework"
+                       Text="Client heeft geen opgesteld huiswerk"
+                       FontSize="16"
+                       HorizontalOptions="Center"
+                       TextColor="Gray"
+                       IsVisible="False"/>
+                <ListView x:Name="homeworkList"
+                          SeparatorColor="Black"/>
+            </VerticalStackLayout>
         </Border>
         <Button x:Name="ViewHomeworkBtn"
             Text="Huiswerk inzien"
