@@ -15,7 +15,14 @@
                 Aspect="AspectFit"
                 Margin="0,20,0,30"
                 HorizontalOptions="Center"/>
-            
+           
+            <Label x:Name="NameHomework"
+         FontSize="20"
+         HorizontalOptions="Center"
+         FontAttributes="Bold"/>
+
+
+
             <Label Text="antwoord" FontSize="18" FontAttributes="Bold"/>
             <Editor x:Name="descriptionEditor" 
                    Placeholder="antwoord"

@@ -8,6 +8,7 @@ public partial class ClientHomework : ContentPage
 	public ClientHomework(Client client, Huiswerk huiswerk)
 	{
 		InitializeComponent();
+		NameHomework.Text = $"description:\n{huiswerk.Description}";
 		var Huiswerk = huiswerk;
 	}
     private async void OnSubmitClicked(object sender, EventArgs e) 

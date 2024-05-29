@@ -14,7 +14,9 @@ public partial class ClientHomeworkOverview : ContentPage
     private async void OnAnswerClicked(object sender, EventArgs e)
     {
         Huiswerk selectedHomework = homeworkPicker.SelectedItem as Huiswerk;
-
-        await Navigation.PushAsync(new ClientHomework(clent,selectedHomework));
+        if (selectedHomework != null)
+        {
+            await Navigation.PushAsync(new ClientHomework(clent, selectedHomework));
+        }
     }
 }
