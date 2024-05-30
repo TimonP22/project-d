@@ -24,11 +24,12 @@
            Placeholder="Antwoord"
            HeightRequest="300"/>
             <Button Text="Opslaan" 
-            VerticalOptions="Center"
-            Margin="0,20,0,15"
-            HeightRequest="60"
-            WidthRequest="300"
-            BackgroundColor="Black"/>
+                    VerticalOptions="Center"
+                    Margin="0,20,0,15"
+                    HeightRequest="60"
+                    WidthRequest="300"
+                    BackgroundColor="Black"
+                    Clicked="OnSaveBtnClicked"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
