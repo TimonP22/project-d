@@ -23,4 +23,9 @@ public partial class HomeworkOverview : ContentPage
     {
        await Navigation.PushAsync(new HomeworkCreate(Client));
     }
+
+    private async void OnReturnBtnClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new HWModuleStartPsycholoog(), true);
+    }
 } 

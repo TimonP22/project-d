@@ -16,9 +16,8 @@ public partial class HomeworkCreate : ContentPage
 		Huiswerk huiswerk = new(titleEntry.Text, descriptionEditor.Text, Helper.User.Id, Client.Id, datePicker.Date);
 
 		await App.DatabaserHelper.PublishHomework(huiswerk);
-		await DisplayAlert("Notification", "Huiswerkopdracht succesvol aangemaakt.", "OK");
-
-		await Navigation.PopAsync();
+		await App.DatabaserHelper.GetHomework(Client);
+        await DisplayAlert("Notification", "Huiswerkopdracht succesvol aangemaakt.", "OK");
         await Navigation.PushAsync(new HomeworkOverview(Client));
     }
 
