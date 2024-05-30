@@ -83,12 +83,15 @@ public class DatabaseHelper
                 await GetClients((Psycholoog)user);
                 await page.Navigation.PushAsync(new StartschermPsycholoog(), true);
             }
-            List<Huiswerk> lijst = new() {
-            new Huiswerk("testc doen", "beschrijf je zelf",user.Id, user.Id, new DateTime(1987, 1, 1)),
-            new Huiswerk("testc doen", "beschrijf je zelf", user.Id, user.Id, new DateTime(1987, 1, 1))
-        };
-            await page.Navigation.PushAsync(new ClientHomeworkOverview((Client)user,lijst), true);
-                
+            else
+            {
+
+
+
+                Client hi = (Client)user;
+                await page.Navigation.PushAsync(new ClientHomeworkOverview(hi), true);
+
+            }
         }
         catch (Exception ex)
         {

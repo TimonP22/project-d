@@ -16,10 +16,11 @@
             Margin="0,20,0,30"
             HorizontalOptions="Center"/>
             <Picker x:Name="homeworkPicker"
-         Title="Cliënt"
-         Margin="0,5">
+             Title="Homework"
+             Margin="0,5"
+             ItemDisplayBinding="{Binding Title}"/>
             </Picker>
-            <Button Text="Submit" 
+            <Button Text="Submit"
             VerticalOptions="Center"
             Margin="0,20,0,15"
             HeightRequest="60"

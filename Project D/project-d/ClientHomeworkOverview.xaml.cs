@@ -5,10 +5,12 @@ namespace project_d;
 public partial class ClientHomeworkOverview : ContentPage
 {
     public Client clent;
-	public ClientHomeworkOverview(Client client, List<Huiswerk> huiswerk)
+	public ClientHomeworkOverview(Client client)
 	{
-		InitializeComponent();
-        homeworkPicker.ItemsSource = huiswerk;
+
+        
+        InitializeComponent();
+        homeworkPicker.ItemsSource = client.Huiswerk;
         clent = client;
     }
     private async void OnAnswerClicked(object sender, EventArgs e)
