@@ -11,7 +11,8 @@ public partial class HomeworkOverview : ContentPage
         Client = client;
         ClientLbl.Text = Client.ToString();
         homeworkList.ItemsSource = Client.Huiswerk;
-	}
+        NoHomework.IsVisible = Client.Huiswerk?.Count == 0;
+    }
 
     private async void OnViewHomeworkBtnClicked(object sender, EventArgs e)
     {
