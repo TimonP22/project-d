@@ -18,6 +18,6 @@ public partial class HomeworkSubmittingClient : ContentPage
 		var antwoord = new Antwoord(Huiswerk.Id, answerEditor.Text, 1);
 		await App.DatabaserHelper.PostHomeworkContent(this, antwoord);
 		await Navigation.PopAsync();
-		await Navigation.PushAsync(new ClientHomeworkOverview((Client)Helper.User!));
+		await Navigation.PushAsync(new ClientHomeworkOverview());
 	}
 }

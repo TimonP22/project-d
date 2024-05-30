@@ -19,9 +19,9 @@
                FontSize="18"
                HorizontalOptions="Center"
                FontAttributes="Bold"/>
-        <Button x:Name="HWOverzichtBtn"
+        <Button x:Name="HWModBtn"
                 Margin="0,20,0,15"
-                Text="Huiswerk overzicht"
+                Text="Huiswerkmodule"
                 FontSize="16"
                 FontAttributes="Bold"
                 HeightRequest="60"
@@ -29,10 +29,10 @@
                 BackgroundColor="Black"
                 TextColor="White"
                 HorizontalOptions="Center"
-                Clicked="OnHWOverzichtBtnClicked"/>
-        <Button x:Name="HWKiezenBtn"
+                Clicked="OnHWModBtnClicked"/>
+        <Button x:Name="PlaceholderBtn"
                 Margin="0,0,0,15"
-                Text="Huiswerk kiezen"
+                Text="Placeholder"
                 FontSize="16"
                 FontAttributes="Bold"
                 HeightRequest="60"
@@ -40,7 +40,7 @@
                 BackgroundColor="Black"
                 TextColor="White"
                 HorizontalOptions="Center"
-                Clicked="OnHWKiezenBtnClicked"/>
+                Clicked="OnPlaceholderBtnClicked"/>
         <Button x:Name="LogoutBtn"
                 Text="Uitloggen"
                 FontSize="16"

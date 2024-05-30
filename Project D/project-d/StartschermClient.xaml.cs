@@ -10,16 +10,15 @@ public partial class StartschermClient : ContentPage
         NameLbl.Text = $"Welkom, {Helper.User!.FullName}!";
     }
 
-    private async void OnHWOverzichtBtnClicked(object sender, EventArgs e)
+    private async void OnHWModBtnClicked(object sender, EventArgs e)
     {
-        // placeholder
-        await DisplayAlert("Huiswerk overzicht", "navigatie nog niet geimplementeerd", "OK");
+        await Navigation.PushAsync(new ClientHomeworkOverview(), true);
     }
 
-    private async void OnHWKiezenBtnClicked(object sender, EventArgs e)
+    private async void OnPlaceholderBtnClicked(object sender, EventArgs e)
     {
         // placeholder 
-        await DisplayAlert("Huiswerk kiezen", "navigatie nog niet geimplementeerd", "OK");
+        await DisplayAlert("Placeholder", "Nog niet geïmplementeerd", "OK");
     }
 
     private async void OnLogoutBtnClicked(object sender, EventArgs e)
