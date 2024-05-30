@@ -20,7 +20,7 @@
              Margin="0,5"
              ItemDisplayBinding="{Binding Title}"
             />
-            <Button Text="Submit"
+            <Button Text="Verder"
             VerticalOptions="Center"
             Margin="0,20,0,15"
             HeightRequest="60"
