@@ -86,6 +86,7 @@ public class DatabaseHelper
             else
             {
                 Client hi = (Client)user;
+                await GetHomework(hi);
                 await page.Navigation.PushAsync(new ClientHomeworkOverview(hi), true);
 
             }
