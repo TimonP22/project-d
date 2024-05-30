@@ -85,10 +85,9 @@ public class DatabaseHelper
             }
             else
             {
-                Client hi = (Client)user;
-                await GetHomework(hi);
-                await page.Navigation.PushAsync(new ClientHomeworkOverview(hi), true);
-
+                Client client = (Client)user;
+                await App.DatabaserHelper.GetHomework(client);
+                await page.Navigation.PushAsync(new ClientHomeworkOverview(client), true);
             }
         }
         catch (Exception ex)
