@@ -4,8 +4,8 @@ namespace project_d;
 
 public partial class HomeworkCreate : ContentPage
 {
-	User Client;
-	public HomeworkCreate(User client)
+	Client Client;
+	public HomeworkCreate(Client client)
 	{
 		InitializeComponent();
 		SetDate();
