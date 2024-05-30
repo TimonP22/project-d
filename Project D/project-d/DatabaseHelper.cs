@@ -85,7 +85,9 @@ public class DatabaseHelper
             }
             else
             {
-                await page.Navigation.PushAsync(new HomeworkSubmittingClient(new Huiswerk("Kleine huiswerkopdracht", "Korte beschrijving\nOm te testen", 1, 1, DateTime.Today)));
+                Client client = (Client)user;
+                await App.DatabaserHelper.GetHomework(client);
+                await page.Navigation.PushAsync(new ClientHomeworkOverview(client), true);
             }
         }
         catch (Exception ex)
@@ -93,7 +95,7 @@ public class DatabaseHelper
             await page.DisplayAlert("Error", ex.Message, "OK");
         }
     }
-
+  
     public async Task FillDataBase(Page page)
     {
         List<User> users = new()
@@ -104,6 +106,8 @@ public class DatabaseHelper
             new Client("Armando", "Bieleveld", new DateTime(1995, 1, 1), "abieleveld@gmail.com", "abpd", 1),
             new Client("Catlijn", "Verheul", new DateTime(2005, 1, 1), "cverheul@gmail.com", "cvpd", 1),
         };
+       
+
 
         try
         {
