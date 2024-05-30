@@ -17,7 +17,7 @@ public partial class HomeworkCreate : ContentPage
 
 		await App.DatabaserHelper.PublishHomework(huiswerk);
 		await DisplayAlert("Notification", "Huiswerkopdracht succesvol aangemaakt.", "OK");
-        await Navigation.PushAsync(new StartschermPsycholoog());
+        await Navigation.PushAsync(new HomeworkOverview(Client));
     }
 
 	private void SetDate()
