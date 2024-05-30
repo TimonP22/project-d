@@ -16,7 +16,7 @@ public partial class ClientHomeworkOverview : ContentPage
         Huiswerk selectedHomework = homeworkPicker.SelectedItem as Huiswerk;
         if (selectedHomework != null)
         {
-            await Navigation.PushAsync(new ClientHomework(clent, selectedHomework));
+            await Navigation.PushAsync(new HomeworkSubmittingClient(selectedHomework));
         }
     }
 }
