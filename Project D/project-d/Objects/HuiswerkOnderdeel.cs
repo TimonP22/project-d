@@ -2,7 +2,7 @@
 
 namespace project_d.Objects;
 
-abstract class HuiswerkOnderdeel
+public abstract class HuiswerkOnderdeel
 {
     [PrimaryKey, AutoIncrement]
     public int Id { get; set; }
@@ -14,4 +14,7 @@ abstract class HuiswerkOnderdeel
         HomeworkId = homeworkId;
         Text = text;
     }
+
+    protected HuiswerkOnderdeel()
+    { }
 }
