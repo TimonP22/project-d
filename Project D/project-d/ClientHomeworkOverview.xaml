@@ -18,8 +18,8 @@
             <Picker x:Name="homeworkPicker"
              Title="Homework"
              Margin="0,5"
-             ItemDisplayBinding="{Binding Title}"/>
-            </Picker>
+             ItemDisplayBinding="{Binding Title}"
+            />
             <Button Text="Submit"
             VerticalOptions="Center"
             Margin="0,20,0,15"

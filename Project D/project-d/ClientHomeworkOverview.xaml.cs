@@ -7,8 +7,6 @@ public partial class ClientHomeworkOverview : ContentPage
     public Client clent;
 	public ClientHomeworkOverview(Client client)
 	{
-
-        
         InitializeComponent();
         homeworkPicker.ItemsSource = client.Huiswerk;
         clent = client;
