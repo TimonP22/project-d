@@ -80,6 +80,9 @@
 	  <MauiXaml Update="ClientOverviewPsycholoog.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="HomeworkChecking.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="HomeworkCreate.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

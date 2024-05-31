@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="project_d.HomeworkChecking"
+             Title="HomeworkChecking">
+    <VerticalStackLayout Margin="30,10,30,10">
+        <Label Text="PROJECT D"
+            FontSize="40"
+            HorizontalOptions="Center"
+            FontAttributes="Bold"
+            TextColor="Black"/>
+        <Image Source="hr_logo.png"
+            HeightRequest="130"
+            Aspect="AspectFit"
+            Margin="0,20,0,30"
+            HorizontalOptions="Center"/>
+        <Label x:Name="titel"
+       FontSize="24"
+       HorizontalOptions="Center"
+       FontAttributes="Bold"/>
+        <Label x:Name="description"
+       FontSize="24"
+       HorizontalOptions="Center"
+       FontAttributes="Bold"/>
+        <Label x:Name="antwoord"
+       FontSize="24"
+       HorizontalOptions="Center"
+       FontAttributes="Bold"/>
+        
+    </VerticalStackLayout>
+</ContentPage>
