@@ -5,6 +5,7 @@ namespace project_d;
 public partial class HomeworkSubmittingClient : ContentPage
 {
 	public Huiswerk Huiswerk;
+	
 	public HomeworkSubmittingClient(Huiswerk huiswerk)
 	{
 		InitializeComponent();
@@ -15,7 +16,8 @@ public partial class HomeworkSubmittingClient : ContentPage
 
 	private async void OnSaveBtnClicked(object sender, EventArgs e)
 	{
-		var antwoord = new Antwoord(Huiswerk.Id, answerEditor.Text, 1);
+		var vraag = await App.DatabaserHelper.GetQuestion(Huiswerk.Id);
+		var antwoord = new Antwoord(Huiswerk.Id, answerEditor.Text, vraag.Id);
 		await App.DatabaserHelper.PostHomeworkContent(this, antwoord);
 		await Navigation.PopAsync();
 		await Navigation.PushAsync(new ClientHomeworkOverview());
