@@ -4,8 +4,8 @@ namespace project_d;
 
 public partial class HomeworkCreate : ContentPage
 {
-	User Client;
-	public HomeworkCreate(User client)
+	Client Client;
+	public HomeworkCreate(Client client)
 	{
 		InitializeComponent();
 		SetDate();
@@ -16,8 +16,9 @@ public partial class HomeworkCreate : ContentPage
 		Huiswerk huiswerk = new(titleEntry.Text, descriptionEditor.Text, Helper.User.Id, Client.Id, datePicker.Date);
 
 		await App.DatabaserHelper.PublishHomework(huiswerk);
-		await DisplayAlert("Notification", "Huiswerkopdracht succesvol aangemaakt.", "OK");
-        await Navigation.PushAsync(new StartschermPsycholoog());
+		await App.DatabaserHelper.GetHomework(Client);
+        await DisplayAlert("Notification", "Huiswerkopdracht succesvol aangemaakt.", "OK");
+        await Navigation.PushAsync(new HomeworkOverview(Client));
     }
 
 	private void SetDate()

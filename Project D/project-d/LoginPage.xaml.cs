@@ -30,6 +30,12 @@ public partial class LoginPage : ContentPage
             await Navigation.PushAsync(new StartschermPsycholoog(), true);
             return;
         }
+        if (EmailEntry.Text == "cli")
+        {
+            Helper.User = new Client("Jane", "Doe", new DateTime(2000, 1, 1), "jdoe@pd.nl", "jdoe");
+            await Navigation.PushAsync(new StartschermClient(), true);
+            return;
+        }
         if (EmailEntry.Text == "fill")
         {
             await App.DatabaserHelper.FillDataBase(this);

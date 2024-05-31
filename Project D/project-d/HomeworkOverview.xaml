@@ -66,8 +66,18 @@
                 WidthRequest="300"
                 BackgroundColor="Black"
                 TextColor="White"
-                Margin="0,00,0,10"
+                Margin="0,00,0,15"
                 HorizontalOptions="Center"
                 Clicked="OnCreateHomeworkBtnClicked"/>
+        <Button x:Name="ReturnBtn"
+                Text="Terug"
+                FontSize="16"
+                HeightRequest="60"
+                WidthRequest="300"
+                BackgroundColor="Black"
+                TextColor="White"
+                Margin="0,0,0,15"
+                HorizontalOptions="Center"
+                Clicked="OnReturnBtnClicked"/>
     </VerticalStackLayout>
 </ContentPage>

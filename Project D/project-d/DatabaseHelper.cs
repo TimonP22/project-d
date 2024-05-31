@@ -18,10 +18,12 @@ public class DatabaseHelper
             await conn.DropTableAsync<Psycholoog>();
             await conn.DropTableAsync<Client>();
             await conn.DropTableAsync<Huiswerk>();
+            await conn.DropTableAsync<Antwoord>();
         }
         await conn.CreateTableAsync<Psycholoog>();
         await conn.CreateTableAsync<Client>();
         await conn.CreateTableAsync<Huiswerk>();
+        await conn.CreateTableAsync<Antwoord>();
     }
 
     public DatabaseHelper(string dbPath)
@@ -87,7 +89,7 @@ public class DatabaseHelper
             {
                 Client client = (Client)user;
                 await App.DatabaserHelper.GetHomework(client);
-                await page.Navigation.PushAsync(new ClientHomeworkOverview(client), true);
+                await page.Navigation.PushAsync(new StartschermClient(), true);
             }
         }
         catch (Exception ex)
@@ -162,5 +164,19 @@ public class DatabaseHelper
         await Init(true);
 
         await page.DisplayAlert("Notification", "Database has been reset", "OK");
+    }
+
+    public async Task PostHomeworkContent(Page page, HuiswerkOnderdeel huiswerkOnderdeel)
+    {
+        try
+        {
+            await Init();
+            await conn.InsertAsync(huiswerkOnderdeel);
+            await page.DisplayAlert("Notification", "Huiswerk is opgeslagen", "OK");
+}
+        catch (Exception ex)
+        {
+            await page.DisplayAlert("Error", ex.Message, "OK");
+        }
     }
 }
