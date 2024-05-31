@@ -89,7 +89,7 @@ public class DatabaseHelper
             {
                 Client client = (Client)user;
                 await App.DatabaserHelper.GetHomework(client);
-                await page.Navigation.PushAsync(new ClientHomeworkOverview(client), true);
+                await page.Navigation.PushAsync(new StartschermClient(), true);
             }
         }
         catch (Exception ex)

@@ -22,7 +22,7 @@
             <Label Text="Antwoord" FontSize="18" FontAttributes="Bold" Margin="0,20,0,0"/>
             <Editor x:Name="answerEditor" 
            Placeholder="Antwoord"
-           HeightRequest="300"/>
+           HeightRequest="250"/>
             <Button Text="Opslaan" 
                     VerticalOptions="Center"
                     Margin="0,20,0,15"
