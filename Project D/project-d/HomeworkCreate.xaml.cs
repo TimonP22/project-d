@@ -17,6 +17,9 @@ public partial class HomeworkCreate : ContentPage
 
 		await App.DatabaserHelper.PublishHomework(huiswerk);
 		await App.DatabaserHelper.GetHomework(Client);
+		int homeworkId = await App.DatabaserHelper.GetLatestHomeworkId();
+        Vraag vraag = new(homeworkId, questionEditor.Text);
+        await App.DatabaserHelper.PostHomeworkContent(this, vraag);
         await DisplayAlert("Notification", "Huiswerkopdracht succesvol aangemaakt.", "OK");
         await Navigation.PushAsync(new HomeworkOverview(Client));
     }

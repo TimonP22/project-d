@@ -179,4 +179,10 @@ public class DatabaseHelper
             await page.DisplayAlert("Error", ex.Message, "OK");
         }
     }
+
+    public async Task<int> GetLatestHomeworkId()
+    {
+        var homework = await conn.Table<Huiswerk>().OrderByDescending(h => h.Id).FirstOrDefaultAsync();
+        return homework.Id;
+    }
 }
