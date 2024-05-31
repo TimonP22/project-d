@@ -10,6 +10,8 @@ namespace project_d
             List<string> userTypes = new() { "Psycholoog", "Cliënt" };
             userTypePicker.ItemsSource = userTypes;
             userTypePicker.SelectedIndex = 0;
+
+            ShowDatabasePathAlert();
         }
 
         private async void OnLoginBtnClicked(object sender, EventArgs e)
@@ -25,6 +27,13 @@ namespace project_d
         private void OnUserTypeChanged(object sender, EventArgs e)
         {
             Helper.IsPsychologist = userTypePicker.SelectedIndex == 0;
+        }
+
+        // Database path
+        private async void ShowDatabasePathAlert()
+        {
+            string databasePath = FileAccessHelper.GetLocalFilePath("database.db3");
+            await DisplayAlert("Database Path", databasePath, "OK");
         }
     }
 
