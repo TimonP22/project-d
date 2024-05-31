@@ -111,8 +111,6 @@ public class DatabaseHelper
             new Client("Catlijn", "Verheul", new DateTime(2005, 1, 1), "cverheul@gmail.com", "cvpd", 1),
         };
        
-
-
         try
         {
             await Init(true);
