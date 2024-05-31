@@ -185,4 +185,10 @@ public class DatabaseHelper
         var homework = await conn.Table<Huiswerk>().OrderByDescending(h => h.Id).FirstOrDefaultAsync();
         return homework.Id;
     }
+
+    public async Task<Vraag> GetQuestion(int homeworkId)
+    {
+        var vraag = await conn.Table<Vraag>().Where(v => v.HomeworkId == homeworkId).FirstOrDefaultAsync();
+        return vraag;
+    }
 }
