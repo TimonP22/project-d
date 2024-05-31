@@ -24,11 +24,27 @@ public partial class RegisterPage : ContentPage
             return;
         }
 
+        if (!IsValidEmail(EmailEntry.Text))
+        {
+            await DisplayAlert("Error", "Ingevoerde e-mailadres is niet geldig.", "OK");
+            return;
+        }
+
         User user;
         if (Helper.IsPsychologist)
             user = new Psycholoog(FirstNameEntry.Text, LastNameEntry.Text, datePicker.Date, EmailEntry.Text.ToLower(), PasswordEntry.Text);
         else
             user = new Client(FirstNameEntry.Text, LastNameEntry.Text, datePicker.Date, EmailEntry.Text.ToLower(), PasswordEntry.Text);
         await App.DatabaserHelper.AddNewUser(user, this);
+    }
+
+    private bool IsValidEmail(string email)
+    {
+        if (string.IsNullOrWhiteSpace(email))
+        {
+            return false;
+        }
+
+        return email.Contains("@");
     }
 }
