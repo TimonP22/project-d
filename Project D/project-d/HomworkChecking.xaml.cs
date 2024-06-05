@@ -13,8 +13,6 @@ public partial class HomworkChecking : ContentPage
         titel.Text = huiswerk.Title;
         description.Text = huiswerk.Description;
         int id = huiswerk.Id;
-
-        // Call the async method without blocking the UI thread
         LoadAntwoordAsync(id);
     }
 
