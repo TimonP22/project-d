@@ -191,4 +191,16 @@ public class DatabaseHelper
         var vraag = await conn.Table<Vraag>().Where(v => v.HomeworkId == homeworkId).FirstOrDefaultAsync();
         return vraag;
     }
+    public async Task<Antwoord?> GetAntwoordAsync(int homeworkId)
+    {
+        var antwoord = await conn.Table<Antwoord>().Where(v => v.HomeworkId == homeworkId).FirstOrDefaultAsync();
+
+        if (antwoord == null || string.IsNullOrEmpty(antwoord.Text))
+        {
+            return null;
+        }
+
+        return antwoord;
+    }
 }
+
