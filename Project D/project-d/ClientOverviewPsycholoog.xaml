@@ -29,14 +29,24 @@
             </ListView.ItemTemplate>
         </ListView>
         <Button x:Name="SelectBtn"
-                Margin="0,20,0,15"
+                Margin="0,20,0,10"
                 Text="Selecteren"
                 FontSize="16"
                 FontAttributes="Bold"
                 HeightRequest="60"
                 WidthRequest="300"
                 BackgroundColor="Black"/>
+        <Button x:Name="AddClientBtn"
+                Margin="0,10,0,10"
+                Text="Client toevoegen"
+                FontSize="16"
+                FontAttributes="Bold"
+                HeightRequest="60"
+                WidthRequest="300"
+                BackgroundColor="Black"
+                Clicked="OnAddClientBtnClicked"/>
         <Button x:Name="ReturnBtn"
+                Margin="0,10,0,20"
                 Text="Terug"
                 FontSize="16"
                 FontAttributes="Bold"

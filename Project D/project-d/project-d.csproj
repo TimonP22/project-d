@@ -68,6 +68,9 @@
 	  <Compile Update=".xaml.cs">
 	    <DependentUpon>.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="AddClientPage.xaml.cs">
+	    <DependentUpon>AddClientPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -96,6 +99,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update=".xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="AddClientPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="RegisterPage.xaml">
