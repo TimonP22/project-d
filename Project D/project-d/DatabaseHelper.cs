@@ -130,10 +130,12 @@ public class DatabaseHelper
             await Init();
             psycholoog.Clients = await conn.Table<Client>().Where(c => c.PsychologistId == psycholoog.Id).ToListAsync();
         }
-        catch
+        catch (Exception ex)
         {
+            Console.WriteLine(ex.Message);
         }
     }
+
 
     public async Task GetHomework(Client client)
     {
@@ -201,6 +203,25 @@ public class DatabaseHelper
         }
 
         return antwoord;
+    }
+    public async Task AddNewClient(Client client)
+    {
+        try
+        {
+            await Init();
+
+            var existingClient = await conn.Table<Client>().FirstOrDefaultAsync(c => c.Email == client.Email);
+            if (existingClient != null)
+            {
+                throw new Exception("Dit e-mailadres is al in gebruik.");
+            }
+
+            await conn.InsertAsync(client);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
     }
 }
 
