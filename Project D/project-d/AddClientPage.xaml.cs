@@ -19,6 +19,7 @@ public partial class AddClientPage : ContentPage
 
         await App.DatabaserHelper.BindClientToPsychologist(client);
         await DisplayAlert("Notification", $"Cliënt {client.FullName} is succesvol toegevoegd!", "OK");
+        await Navigation.PopAsync();
     }
 
     private async void OnCancelBtnClicked(object sender, EventArgs e)

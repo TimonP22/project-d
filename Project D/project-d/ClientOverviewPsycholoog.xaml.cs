@@ -23,6 +23,7 @@ public partial class ClientOverviewPsycholoog : ContentPage
     {
         clients.Clear();
         var psycholoog = Helper.User as Psycholoog;
+        await App.DatabaserHelper.GetClients(psycholoog!);
         if (psycholoog != null)
         {
             foreach (var client in psycholoog.Clients)
