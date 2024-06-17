@@ -4,5 +4,6 @@
     {
         public static bool IsPsychologist = true;
         public static User? User { get; set; }
+        public static List<Client>? UnassignedClients { get; set; }
     }
 }

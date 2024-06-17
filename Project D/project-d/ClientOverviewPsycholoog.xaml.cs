@@ -39,6 +39,7 @@ public partial class ClientOverviewPsycholoog : ContentPage
 
     private async void OnAddClientBtnClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new AddClientPage(RefreshClientList));
+        await App.DatabaserHelper.GetUnassignedClients();
+        await Navigation.PushAsync(new AddClientPage());
     }
 }

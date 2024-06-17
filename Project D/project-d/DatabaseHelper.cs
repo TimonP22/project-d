@@ -223,5 +223,31 @@ public class DatabaseHelper
             Console.WriteLine(ex.Message);
         }
     }
+
+    public async Task GetUnassignedClients()
+    {
+        try
+        {
+            await Init();
+            Helper.UnassignedClients = await conn.Table<Client>().Where(c => c.PsychologistId == 0).ToListAsync();
+        }
+        catch
+        {
+
+        }
+    }
+
+    public async Task BindClientToPsychologist(Client client)
+    {
+        try
+        {
+            await Init();
+            await conn.UpdateAsync(client);
+        }
+        catch
+        {
+            throw;
+        }
+    }
 }
 

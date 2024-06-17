@@ -4,40 +4,21 @@ namespace project_d;
 
 public partial class AddClientPage : ContentPage
 {
-    private Action refreshClientList;
-
-    public AddClientPage(Action refreshClientList)
+    public AddClientPage()
     {
         InitializeComponent();
-        this.refreshClientList = refreshClientList;
+        clientPicker.ItemsSource = Helper.UnassignedClients;
     }
 
     private async void OnSaveClientBtnClicked(object sender, EventArgs e)
     {
-        string firstName = FirstNameEntry.Text;
-        string lastName = LastNameEntry.Text;
-        DateTime birthday = BirthdayPicker.Date;
+        if (clientPicker.SelectedItem == null) return;
 
-        if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName))
-        {
-            await DisplayAlert("Fout", "Vul alle velden in.", "OK");
-            return;
-        }
+        Client client = (Client)clientPicker.SelectedItem;
+        client.PsychologistId = Helper.User!.Id; 
 
-        var psycholoog = Helper.User as Psycholoog;
-        if (psycholoog == null)
-        {
-            await DisplayAlert("Error", "Psycholoog niet gevonden.", "OK");
-            return;
-        }
-
-        Client newClient = new Client(firstName, lastName, birthday, psychologistId: psycholoog.Id);
-        psycholoog.Clients.Add(newClient);
-
-        refreshClientList?.Invoke();
-
-        await DisplayAlert("Opslaan", "Cliëntgegevens zijn opgeslagen.", "OK");
-        await Navigation.PopAsync();
+        await App.DatabaserHelper.BindClientToPsychologist(client);
+        await DisplayAlert("Notification", $"Cliënt {client.FullName} is succesvol toegevoegd!", "OK");
     }
 
     private async void OnCancelBtnClicked(object sender, EventArgs e)
